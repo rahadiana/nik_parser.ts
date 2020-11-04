@@ -1,13 +1,11 @@
 {
   "name": "nik-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse & Validasi Nomor Induk Kependudukan (NIK) KTP Menggunakan TypeScript.",
   "main": "./dist/nik_parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run compile && npm run minify",
-    "compile": "tsc src/nik_parser.ts --resolveJsonModule --outDir ./dist",
-    "minify": "terser --compress --mangle --source-map --output ./dist/nik_parser.min.js -- ./dist/nik_parser.js"
+    "build": "sh ./build.sh"
   },
   "repository": {
     "type": "git",
@@ -21,6 +19,7 @@
   },
   "homepage": "https://github.com/mul14/nik_parser.ts#readme",
   "devDependencies": {
-    "terser": "^5.3.8"
+    "terser": "^5.3.8",
+    "typescript": "^4.0.5"
   }
 }
