@@ -2,10 +2,11 @@
   "name": "nik-parser",
   "version": "1.0.1",
   "description": "Parse & Validasi Nomor Induk Kependudukan (NIK) KTP Menggunakan TypeScript.",
-  "main": "./dist/nik_parser.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sh ./build.sh"
+    "build": "sh ./build.sh",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
