@@ -1,17 +1,33 @@
-# nik_parser.ts
+# NIK Parser in TypeScript
 
 Parse & Validasi Nomor Induk Kependudukan (NIK) KTP Menggunakan TypeScript.
 
 Kode ini merupakan modifikasi dari https://github.com/bachors/nik_parse.js.
 
-Perbedaan antara nik_parser.ts dan nik_parse.js adalah:
-- nik_parser.ts didesain dengan menggunakan TypeScript, sedangkan nik_parse.js menggunakan JavaScript.
-- nik_parser.ts didesain sebagai library, sedangkan nik_parse.js didesain sebagai JSON response.
-- nik_parser.ts hanya fokus ke informasi yang esensial (tidak termasuk usia dan zodiak).
+Perbedaan antara `nik-parser` dan `nik_parse.js` adalah:
+
+|                  | nik-parser                               | nik_parse.js  |
+|------------------|------------------------------------------|---------------|
+| Bahasa           | TypeScript                               | JavaScript    |
+| Didesain sebagai | Library                                  | JSON response |
+| Fokus            | Esensial data<sup>[[1]](#footnote)</sup> | Lain-lain     |
+
+<a id="footnote" />
+<sup>[1]</sup>
+<sub>Esensial data yang dimaksud tidak memasukkan informasi seperti zodiak,
+usia hingga ke tingkatan hari, dan berapa lama lagi akan berulang tahun.</sub>
+
+## Instalasi
+
+```sh
+npm i nik-parser
+```
 
 ## Penggunaan
 
 ```ts
+import { nikParser } from 'nik-parser'
+
 const nik = '3204110609970001'
 
 const nikObject = nikParser(nik)
