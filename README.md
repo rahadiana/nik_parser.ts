@@ -26,23 +26,25 @@ npm i nik-parser
 ## Penggunaan
 
 ```ts
+// const { nikParser } = require('nik-parser')
+
 import { nikParser } from 'nik-parser'
 
-const nik = '3204110609970001'
+const ktp = '3204110609970001'
 
-const nikObject = nikParser(nik)
+const nik = nikParser(ktp)
 
-nikObject.isValid()         // true
-nikObject.provinceId()      // 32
-nikObject.province()        // JAWA BARAT
-nikObject.kabupatenKotaId() // 3204
-nikObject.kabupatenKota()   // KAB. BANDUNG
-nikObject.kecamatanId()     // 320411
-nikObject.kecamatan()       // KATAPANG
-nikObject.kodepos()         // 40921
-nikObject.kelamin()         // male
-nikObject.lahir()           // Date object -> Sat Sep 06 1997 00:00:00 GMT+0700 (Western Indonesia Time)
-nikObject.uniqcode()        // 0001
+nik.isValid()         // true
+nik.provinceId()      // 32
+nik.province()        // JAWA BARAT
+nik.kabupatenKotaId() // 3204
+nik.kabupatenKota()   // KAB. BANDUNG
+nik.kecamatanId()     // 320411
+nik.kecamatan()       // KATAPANG
+nik.kodepos()         // 40921
+nik.kelamin()         // male
+nik.lahir()           // 1997-09-05T17:00:00.000Z (Date object)
+nik.uniqcode()        // 0001
 ```
 
 # Catatan
