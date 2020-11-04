@@ -1,60 +1,34 @@
-# nik_parse.js
-Parse & Validasi Nomor Induk Kependudukan (NIK) KTP Menggunakan Javascript.
+# nik_parser.ts
 
-# rumus
-<img src="kodenik.jpg"/>
+Parse & Validasi Nomor Induk Kependudukan (NIK) KTP Menggunakan TypeScript.
 
-Sample
-------
-```html
-<script type="text/javascript" src="js/nik_parse.js"></script>
-<script>
+Kode ini merupakan modifikasi dari https://github.com/bachors/nik_parse.js.
 
-	const nik = "3204110609970001";
+Perbedaan antara nik_parser.ts dan nik_parse.js adalah:
+- nik_parser.ts didesain dengan menggunakan TypeScript, sedangkan nik_parse.js menggunakan JavaScript.
+- nik_parser.ts didesain sebagai library, sedangkan nik_parse.js didesain sebagai JSON response.
+- nik_parser.ts hanya fokus ke informasi yang esensial (tidak termasuk usia dan zodiak).
 
-	nikParse(nik, function(result) {
-	
-		// object
-		console.log(result);
-	
-	});
-	
-</script>
+## Penggunaan
+
+```ts
+const nik = '3204110609970001'
+
+const nikObject = nikParser(nik)
+
+nikObject.isValid()         // true
+nikObject.provinceId()      // 32
+nikObject.province()        // JAWA BARAT
+nikObject.kabupatenKotaId() // 3204
+nikObject.kabupatenKota()   // KAB. BANDUNG
+nikObject.kecamatanId()     // 320411
+nikObject.kecamatan()       // KATAPANG
+nikObject.kodepos()         // 40921
+nikObject.kelamin()         // male
+nikObject.lahir()           // Date object -> Sat Sep 06 1997 00:00:00 GMT+0700 (Western Indonesia Time)
+nikObject.uniqcode()        // 0001
 ```
 
-Result
-------
-```json
-{
-  "status": "success",
-  "pesan": "NIK valid",
-  "data": {
-    "nik": "3204110609970001",
-    "kelamin": "LAKI-LAKI",
-    "lahir": "06/09/1997",
-    "provinsi": "JAWA BARAT",
-    "kotakab": "KAB. BANDUNG",
-    "kecamatan": "KATAPANG",
-    "uniqcode": "0001",
-    "tambahan": {
-      "kodepos": "40921",
-      "pasaran": "Sabtu Pahing, 6 September 1997",
-      "usia": "23 Tahun 1 Bulan 27 Hari",
-      "ultah": "10 Bulan 8 Hari Lagi",
-      "zodiak": "Virgo"
-    }
-  }
-}
-```
-
-```json
-{
-  "status": "error",
-  "pesan": "NIK tidak valid"
-}
-```
-
-<h2><a href="http://bachors.com/code/validasi-nik-ktp-menggunakan-javascript-nik_parsejs?embed">DEMO</a></h2>
-
-# note
-Data yang dihasilkan hanya hasil menterjemahkan tiap digit NIK sehingga data yang dihasilkan adalah tempat pertamakali NIK dibuat/tempat lahir (bukan tempat domisili pemilik NIK secara uptodate).
+# Catatan
+Data yang dihasilkan hanya hasil menterjemahkan tiap digit NIK sehingga data yang dihasilkan adalah
+tempat kali pertama NIK dibuat/tempat lahir (bukan tempat domisili pemilik NIK secara uptodate).
