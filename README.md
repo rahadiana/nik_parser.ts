@@ -42,7 +42,7 @@ nik.kabupatenKota()   // KAB. BANDUNG
 nik.kecamatanId()     // 320411
 nik.kecamatan()       // KATAPANG
 nik.kodepos()         // 40921
-nik.kelamin()         // male
+nik.kelamin()         // pria
 nik.lahir()           // 1997-09-05T17:00:00.000Z (Date object)
 nik.uniqcode()        // 0001
 ```

@@ -51,7 +51,7 @@ export const nikParser = (nik: string): NikDetail => ({
   },
 
   kelamin(): string {
-    return this.lahir().getDate() < 40 ? 'male' : 'female'
+    return this.lahir().getDate() < 40 ? 'pria' : 'wanita'
   },
 
   lahir: (): Date => {
