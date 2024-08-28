@@ -33,9 +33,11 @@ exports.nikParser = function (nik) { return ({
         return this.lahir().getDate() < 40 ? 'pria' : 'wanita';
     },
     lahir: function () {
-        var year = Number(nik.substring(10, 12));
+        var yearPart = Number(nik.substring(10, 12));
         var month = Number(nik.substring(8, 10));
         var date = Number(nik.substring(6, 8));
+        // Menentukan tahun kelahiran    
+        var year = yearPart <= 21 ? 2000 + yearPart : 1900 + yearPart;
         return new Date(year, month - 1, date);
     },
     uniqcode: function () { return nik.substring(12, 16); }
