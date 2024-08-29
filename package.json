@@ -1,5 +1,5 @@
 {
-  "name": "@rahadiana/nik-parser",
+  "name": "nik-parser",
   "version": "1.0.1",
   "description": "Parse & Validasi Nomor Induk Kependudukan (NIK) KTP Menggunakan TypeScript.",
   "main": "./dist/index.js",
